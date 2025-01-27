@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        
+    
+    <link rel='stylesheet' href="/./css/dracula.css">
+
+        <title>frame（1月27日）</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="manifest" href="/site.webmanifest">
+
+    <meta name="generator" content="Hexo 7.3.0"></head>
+    <body>
+        <header class="al_header al_pos_fixed">
+    <div class="al_header_container dis_flex_jcenter">
+        <div class="al_header_container_left">
+            <div class="al_header_site_title">
+                <a href="/">Hexo</a>
+            </div>
+        </div>
+
+        <div class="dis_flex_jcenter">
+            <div class="al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="al_sidebar">
+
+    <div class="al_sidebar_overlay al_full_cover"></div>
+
+    <div class="al_pos_fixed al_sidebar_cnt">
+        <div class="dis_flex_acenter al_sidebar_header">
+            <h3>Hexo</h3>
+            <div class="al_sidebar_close al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
+                </svg>
+            </div>
+        </div>
+
+        <div class="al_sidebar_author_cnt">
+
+            <div class="al_sidebar_author_info">
+                <h4>John Doe</h4>
+                <img class="al_sidebar_avatar" src="https://yourAvatorURL">
+                <p></p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
+        
+    <div class="dis_flex_center al_lightbox_cnt al_full_cover">
+        <img class="al_lightbox_img"/>
+    </div>
+    <div class="al_page_background dis_flex_center al_full_cover"></div>
+    <div class="al_page_container">
+        <div class="al_pos_ab al_fake_background"></div>
+        <div class="al_main_container al_shadow al_main_page_container">
+            <article class="al_article">
+                <header>
+                    <h1 class="al_page_title">
+                        frame（1月27日）
+                    </h1>
+                    <div class="al_page_info dis_flex">
+                        <div class="al_page_content_info">
+                            Mon January 27, 2025 07:10 PM
+                        </div>
+
+                        
+
+                        
+                        <span class="tags"></span>
+                    </div>
+                </header>
+
+                
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#frame%E5%88%87%E6%8D%A2-%E7%AA%97%E5%8F%A3%E5%88%87%E6%8D%A2"><span class="toc-text">frame切换&#x2F;窗口切换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0frame"><span class="toc-text">切换到frame</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0%E6%96%B0%E7%9A%84%E7%AA%97%E5%8F%A3"><span class="toc-text">切换到新的窗口</span></a></li></ol></li></ol>
+                    </div>
+                
+
+                
+                <section id="post-body">
+                    <h1 id="frame切换-窗口切换"><a href="#frame切换-窗口切换" class="headerlink" title="frame切换&#x2F;窗口切换"></a>frame切换&#x2F;窗口切换</h1><h2 id="切换到frame"><a href="#切换到frame" class="headerlink" title="切换到frame"></a>切换到frame</h2><p>这个 iframe 元素非常的特殊， 在html语法中，frame 元素 或者iframe元素的内部 会包含一个被嵌入的另一份html文档。</p>
+<p>在我们使用selenium打开一个网页是， 我们的操作范围 缺省是当前的 html ， 并不包含被嵌入的html文档里面的内容。</p>
+<p>如果我们要 操作 被嵌入的 html 文档 中的元素， 就必须 <code>切换操作范围</code> 到 被嵌入的文档中。</p>
+<p>使用 WebDriver 对象的 switch_to 属性，像这样</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wd.switch_to.frame(frame_reference)</span><br></pre></td></tr></table></figure>
+
+<p>其中， frame_reference 可以是 frame 元素的属性 name 或者 ID 。</p>
+<h2 id="切换到新的窗口"><a href="#切换到新的窗口" class="headerlink" title="切换到新的窗口"></a>切换到新的窗口</h2><p>如果我们要到新的窗口里面操作，该怎么做呢？</p>
+<p>可以使用Webdriver对象的switch_to属性的 window方法，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wd.switch_to.window(handle)</span><br></pre></td></tr></table></figure>
+
+<p>其中，参数handle需要传入什么呢？</p>
+<p>WebDriver对象有window_handles 属性，这是一个列表对象， 里面包括了当前浏览器里面<strong>所有的窗口句柄</strong>。</p>
+<p>所谓句柄，大家可以想象成对应网页窗口的一个ID</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for handle in wd.window_handles:</span><br><span class="line">    # 先切换到该窗口</span><br><span class="line">    wd.switch_to.window(handle)</span><br><span class="line">    # 得到该窗口的标题栏字符串，判断是不是我们要操作的那个窗口</span><br><span class="line">    if &#x27;Bing&#x27; in wd.title:</span><br><span class="line">        # 如果是，那么这时候WebDriver对象就是对应的该该窗口，正好，跳出循环，</span><br><span class="line">        break</span><br></pre></td></tr></table></figure>
+
+<p> 进入新窗口操作完后，还要回来，可以事先 保存该老窗口的 句柄，使用如下方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># mainWindow变量保存当前窗口的句柄</span><br><span class="line">mainWindow = wd.current_window_handle</span><br></pre></td></tr></table></figure>
+
+<p>切换到新窗口操作完后，就可以直接像下面这样，将driver对应的对象返回到原来的窗口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#通过前面保存的老窗口的句柄，自己切换到老窗口</span><br><span class="line">wd.switch_to.window(mainWindow)</span><br></pre></td></tr></table></figure>
+
+                </section>
+
+                
+                
+
+                
+
+            </article>
+
+            
+            <nav class="dis_flex al_post_nav">
+                <a class="al_post_nav_item dis_flex_acenter" href="/">
+                    
+                </a>
+                <a class="al_post_nav_item dis_flex_acenter" href="/2025/01/26/css%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%881%E6%9C%8825%E6%97%A526%E6%97%A5%EF%BC%89/">
+                    
+                        <span class="al_text_ellipsis al_post_nav_desc">css表达式（1月25日26日）</span>
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
+                        </svg>
+                    
+                </a>
+            </nav>
+        </div>
+    </div>
+
+
+        <div class="al_index_footer dis_flex_center">
+    <div class="al_index_footer_item al_index_footer_title">
+        John Doe
+    </div>
+
+    
+    
+
+    <div class="al_index_footer_item al_index_footer_extra">
+        Created By 
+        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
+         · Power By 
+        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    </div>
+
+    <div class="al_index_footer_item al_index_footer_extra_right">
+        All Right Reserved
+    </div>
+</div>
+
+        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
+        
+        
+        
+        
+        
+
+    </body>
+</html>
