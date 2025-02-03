@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        
+    
+    <link rel='stylesheet' href="/./css/dracula.css">
+
+        <title>上下文管理器与装饰器（2月3日）</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="manifest" href="/site.webmanifest">
+
+    <meta name="generator" content="Hexo 7.3.0"></head>
+    <body>
+        <header class="al_header al_pos_fixed">
+    <div class="al_header_container dis_flex_jcenter">
+        <div class="al_header_container_left">
+            <div class="al_header_site_title">
+                <a href="/">Hexo</a>
+            </div>
+        </div>
+
+        <div class="dis_flex_jcenter">
+            <div class="al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="al_sidebar">
+
+    <div class="al_sidebar_overlay al_full_cover"></div>
+
+    <div class="al_pos_fixed al_sidebar_cnt">
+        <div class="dis_flex_acenter al_sidebar_header">
+            <h3>Hexo</h3>
+            <div class="al_sidebar_close al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
+                </svg>
+            </div>
+        </div>
+
+        <div class="al_sidebar_author_cnt">
+
+            <div class="al_sidebar_author_info">
+                <h4>John Doe</h4>
+                <img class="al_sidebar_avatar" src="https://yourAvatorURL">
+                <p></p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
+        
+    <div class="dis_flex_center al_lightbox_cnt al_full_cover">
+        <img class="al_lightbox_img"/>
+    </div>
+    <div class="al_page_background dis_flex_center al_full_cover"></div>
+    <div class="al_page_container">
+        <div class="al_pos_ab al_fake_background"></div>
+        <div class="al_main_container al_shadow al_main_page_container">
+            <article class="al_article">
+                <header>
+                    <h1 class="al_page_title">
+                        上下文管理器与装饰器（2月3日）
+                    </h1>
+                    <div class="al_page_info dis_flex">
+                        <div class="al_page_content_info">
+                            Mon February 3, 2025 07:04 PM
+                        </div>
+
+                        
+
+                        
+                        <span class="tags"></span>
+                    </div>
+                </header>
+
+                
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E6%9C%AC%E8%B4%A8"><span class="toc-text">1.1 装饰器的本质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">1.2 装饰器的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E5%B8%B8%E8%A7%81%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">1.3 装饰器的常见应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9F"><span class="toc-text">2.1 什么是上下文管理器？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-text">2.2 上下文管理器的基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E4%BD%BF%E7%94%A8-contextlib-%E6%A8%A1%E5%9D%97%E5%88%9B%E5%BB%BA%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">2.2.1 使用 contextlib 模块创建上下文管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E5%99%A8%E7%B1%BB"><span class="toc-text">2.2.2 自定义上下文管理器类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5"><span class="toc-text">数据库连接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%93%E5%AD%98%E5%9C%A8%E5%A4%9A%E4%B8%AA%E8%A3%85%E9%A5%B0%E5%99%A8%E5%90%8C%E6%97%B6%E8%A3%85%E9%A5%B0%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%EF%BC%8C%E5%85%B6%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="toc-text">当存在多个装饰器同时装饰一个函数，其执行顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8%E6%9D%A5%E4%B8%BA%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E6%B7%BB%E5%8A%A0%E5%89%8D%E7%BD%AE%E5%92%8C%E5%90%8E%E7%BD%AE%E6%93%8D%E4%BD%9C%E5%A6%82%E5%88%9D%E5%A7%8B%E5%8C%96%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E3%80%81%E6%B8%85%E7%90%86%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E7%AD%89%E6%93%8D%E4%BD%9C"><span class="toc-text">使用装饰器来为测试用例添加前置和后置操作如初始化测试数据、清理测试结果等操作</span></a>
+                    </div>
+                
+
+                
+                <section id="post-body">
+                    <h2 id="1-1-装饰器的本质"><a href="#1-1-装饰器的本质" class="headerlink" title="1.1 装饰器的本质"></a>1.1 装饰器的本质</h2><p>装饰器本质上是函数或可调用对象，用于改变其他函数的行为。它们通过将其他函数作为参数传递给自身，并返回一个新的函数，实现在被装饰函数前后插入额外逻辑的目的。</p>
+<h2 id="1-2-装饰器的优点"><a href="#1-2-装饰器的优点" class="headerlink" title="1.2 装饰器的优点"></a>1.2 装饰器的优点</h2><p>代码重用与简化： 装饰器提供了一种将公共逻辑从多个函数中抽取出来并进行复用的方式，从而简化了代码结构。</p>
+<p>增强可读性： 通过将关注点分离，使得被装饰函数保持干净、专注，提高了代码的可读性。</p>
+<h2 id="1-3-装饰器的常见应用场景"><a href="#1-3-装饰器的常见应用场景" class="headerlink" title="1.3 装饰器的常见应用场景"></a>1.3 装饰器的常见应用场景</h2><p>性能计时器： 通过装饰器记录函数执行时间，方便性能优化。</p>
+<p>异常处理： 装饰器可用于捕获函数中的异常，并执行相应的处理逻辑。</p>
+<h2 id="2-1-什么是上下文管理器？"><a href="#2-1-什么是上下文管理器？" class="headerlink" title="2.1 什么是上下文管理器？"></a>2.1 什么是上下文管理器？</h2><p>在Python中，上下文管理器是一种对象，提供了在进入和离开代码块时执行特定逻辑的协议。它主要通过实现两个方法 <strong>enter</strong> 和 <strong>exit</strong> 来实现。<strong>enter</strong> 方法在进入代码块前执行，而 <strong>exit</strong> 方法在代码块结束后执行。</p>
+<p>示例：使用 with 语句的文件操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with open(&quot;example.txt&quot;, &quot;w&quot;) as file:</span><br><span class="line">    file.write(&quot;Hello, Context Manager!&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，open(“example.txt”, “w”) 返回一个上下文管理器对象，with 语句确保在代码块结束时调用 <strong>exit</strong> 方法，即确保文件被正确关闭。</p>
+<h2 id="2-2-上下文管理器的基本使用"><a href="#2-2-上下文管理器的基本使用" class="headerlink" title="2.2 上下文管理器的基本使用"></a>2.2 上下文管理器的基本使用</h2><h3 id="2-2-1-使用-contextlib-模块创建上下文管理器"><a href="#2-2-1-使用-contextlib-模块创建上下文管理器" class="headerlink" title="2.2.1 使用 contextlib 模块创建上下文管理器"></a>2.2.1 使用 contextlib 模块创建上下文管理器</h3><p>contextlib 模块提供了 contextmanager 装饰器，使得创建简单上下文管理器变得更加便捷。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from contextlib import contextmanager</span><br><span class="line"></span><br><span class="line">@contextmanager</span><br><span class="line">def custom_context():</span><br><span class="line">    print(&quot;Entering the custom context&quot;)</span><br><span class="line">    yield  # This is where the code in the &#x27;with&#x27; block will run</span><br><span class="line">    print(&quot;Exiting the custom context&quot;)</span><br><span class="line"></span><br><span class="line"># Using the custom context</span><br><span class="line"></span><br><span class="line">with custom_context():</span><br><span class="line">    print(&quot;Inside the &#x27;with&#x27; block&quot;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-2-2-自定义上下文管理器类"><a href="#2-2-2-自定义上下文管理器类" class="headerlink" title="2.2.2 自定义上下文管理器类"></a>2.2.2 自定义上下文管理器类</h3><p>除了使用 contextmanager 装饰器，我们还可以自定义类来实现上下文管理器协议。</p>
+<pre><code>class MyContextManager:
+    def __enter__(self):
+        print(&quot;Entering the context&quot;)
+        return self  # The value returned by __enter__ is bound to the variable after &#39;as&#39; in &#39;with&#39;
+def __exit__(self, exc_type, exc_value, traceback):
+    print(&quot;Exiting the context&quot;)
+    # Using the custom context manager
+
+with MyContextManager() as context:
+    print(&quot;Inside the &#39;with&#39; block&quot;)
+</code></pre>
+<h1 id="数据库连接"><a href="#数据库连接" class="headerlink" title="数据库连接"></a>数据库连接</h1><p>在数据库操作中，上下文管理器用于确保数据库连接在代码块结束时正确关闭。</p>
+<pre><code>import sqlite3
+class DatabaseConnection:
+    def __init__(self, db_name):
+        self.db_name = db_name
+        self.connection = None
+def __enter__(self):
+    self.connection = sqlite3.connect(self.db_name)
+    return self.connection
+
+def __exit__(self, exc_type, exc_value, traceback):
+    self.connection.close()
+ # Using the custom database connection context manager
+
+with DatabaseConnection(&quot;example.db&quot;) as db:
+    # Perform database operations
+    cursor = db.cursor()
+    cursor.execute(&quot;CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT)&quot;)
+</code></pre>
+<h1 id="当存在多个装饰器同时装饰一个函数，其执行顺序"><a href="#当存在多个装饰器同时装饰一个函数，其执行顺序" class="headerlink" title="当存在多个装饰器同时装饰一个函数，其执行顺序"></a>当存在多个装饰器同时装饰一个函数，其执行顺序</h1><p>当存在多个装饰器装饰一个函数时，装饰器的执行顺序是从下到上（即栈的后进先出原则）。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@decorator1</span></span><br><span class="line"><span class="meta">@decorator2</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">some_function</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>decorator2</code>会首先被应用到<code>some_function</code>上，然后是<code>decorator1</code>。因此，当调用<code>some_function</code>时，<code>decorator1</code>的包装函数会首先被调用，然后是<code>decorator2</code>的包装函数。</p>
+<h1 id="使用装饰器来为测试用例添加前置和后置操作如初始化测试数据、清理测试结果等操作"><a href="#使用装饰器来为测试用例添加前置和后置操作如初始化测试数据、清理测试结果等操作" class="headerlink" title="使用装饰器来为测试用例添加前置和后置操作如初始化测试数据、清理测试结果等操作"></a>使用装饰器来为测试用例添加前置和后置操作如初始化测试数据、清理测试结果等操作</h1><p>可以通过定义一个装饰器来实现这一功能。装饰器可以在函数调用前后执行特定的代码。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test_case_decorator</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 前置操作：初始化测试数据</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Setting up test data...&quot;</span>)</span><br><span class="line">        <span class="comment"># 调用实际的测试用例</span></span><br><span class="line">        result = func(<span class="variable language_">self</span>)</span><br><span class="line">        <span class="comment"># 后置操作：清理测试结果</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Cleaning up test data...&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TestExample</span>(unittest.TestCase):</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @test_case_decorator</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">test_something</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment"># 测试逻辑</span></span><br><span class="line">        <span class="variable language_">self</span>.assertEqual(<span class="number">1</span> + <span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>test_case_decorator</code>装饰器为<code>test_something</code>方法添加了前置和后置操作。运行测试时，会首先执行前置操作，然后执行测试逻辑，最后执行后置操作。</p>
+
+                </section>
+
+                
+                
+
+                
+
+            </article>
+
+            
+            <nav class="dis_flex al_post_nav">
+                <a class="al_post_nav_item dis_flex_acenter" href="/">
+                    
+                </a>
+                <a class="al_post_nav_item dis_flex_acenter" href="/2025/02/02/%E8%BF%AD%E4%BB%A3%E5%99%A8%EF%BC%882%E6%9C%882%E6%97%A5%EF%BC%89/">
+                    
+                        <span class="al_text_ellipsis al_post_nav_desc">迭代器（2月2日）</span>
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
+                        </svg>
+                    
+                </a>
+            </nav>
+        </div>
+    </div>
+
+
+        <div class="al_index_footer dis_flex_center">
+    <div class="al_index_footer_item al_index_footer_title">
+        John Doe
+    </div>
+
+    
+    
+
+    <div class="al_index_footer_item al_index_footer_extra">
+        Created By 
+        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
+         · Power By 
+        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    </div>
+
+    <div class="al_index_footer_item al_index_footer_extra_right">
+        All Right Reserved
+    </div>
+</div>
+
+        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
+        
+        
+        
+        
+        
+
+    </body>
+</html>
