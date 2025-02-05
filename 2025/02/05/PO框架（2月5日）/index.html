@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        
+    
+    <link rel='stylesheet' href="/./css/dracula.css">
+
+        <title>PO框架（2月5日）</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="manifest" href="/site.webmanifest">
+
+    <meta name="generator" content="Hexo 7.3.0"></head>
+    <body>
+        <header class="al_header al_pos_fixed">
+    <div class="al_header_container dis_flex_jcenter">
+        <div class="al_header_container_left">
+            <div class="al_header_site_title">
+                <a href="/">Hexo</a>
+            </div>
+        </div>
+
+        <div class="dis_flex_jcenter">
+            <div class="al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="al_sidebar">
+
+    <div class="al_sidebar_overlay al_full_cover"></div>
+
+    <div class="al_pos_fixed al_sidebar_cnt">
+        <div class="dis_flex_acenter al_sidebar_header">
+            <h3>Hexo</h3>
+            <div class="al_sidebar_close al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
+                </svg>
+            </div>
+        </div>
+
+        <div class="al_sidebar_author_cnt">
+
+            <div class="al_sidebar_author_info">
+                <h4>John Doe</h4>
+                <img class="al_sidebar_avatar" src="https://yourAvatorURL">
+                <p></p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
+        
+    <div class="dis_flex_center al_lightbox_cnt al_full_cover">
+        <img class="al_lightbox_img"/>
+    </div>
+    <div class="al_page_background dis_flex_center al_full_cover"></div>
+    <div class="al_page_container">
+        <div class="al_pos_ab al_fake_background"></div>
+        <div class="al_main_container al_shadow al_main_page_container">
+            <article class="al_article">
+                <header>
+                    <h1 class="al_page_title">
+                        PO框架（2月5日）
+                    </h1>
+                    <div class="al_page_info dis_flex">
+                        <div class="al_page_content_info">
+                            Wed February 5, 2025 05:33 PM
+                        </div>
+
+                        
+
+                        
+                        <span class="tags"></span>
+                    </div>
+                </header>
+
+                
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-PO%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">1.PO设计模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-PO%E6%A1%86%E6%9E%B6%E4%B8%8E%E4%BC%A0%E7%BB%9F%E6%B5%8B%E8%AF%95%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E6%96%B9%E5%BC%8F%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-text">2. PO框架与传统测试脚本编写方式有什么区别？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%B8%B8%E8%A7%81%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%90%84%E8%87%AA%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">3. 常见的页面元素定位方法有哪些？各自的优缺点是什么？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8%E5%A4%8D%E6%9D%82%E9%A1%B5%E9%9D%A2%E7%BB%93%E6%9E%84%E4%B8%AD%EF%BC%8C%E9%80%89%E6%8B%A9%E6%9C%80%E5%90%88%E9%80%82%E7%9A%84%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D%E7%AD%96%E7%95%A5%E9%9C%80%E8%A6%81%E8%80%83%E8%99%91%E4%BB%A5%E4%B8%8B%E5%9B%A0%E7%B4%A0%EF%BC%9A"><span class="toc-text">在复杂页面结构中，选择最合适的元素定位策略需要考虑以下因素：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98"><span class="toc-text">如何处理动态加载的页面元素定位问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8XPath%E6%88%96CSS%E9%80%89%E6%8B%A9%E5%99%A8%E8%BF%9B%E8%A1%8C%E7%81%B5%E6%B4%BB%E5%8C%B9%E9%85%8D"><span class="toc-text">使用XPath或CSS选择器进行灵活匹配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%E8%BE%85%E5%8A%A9%E6%8E%A2%E7%B4%A2"><span class="toc-text">利用浏览器开发者工具辅助探索</span></a></li></ol></li></ol>
+                    </div>
+                
+
+                
+                <section id="post-body">
+                    <h1 id="1-PO设计模式"><a href="#1-PO设计模式" class="headerlink" title="1.PO设计模式"></a>1.PO设计模式</h1><p>PO模式：Page Object，是一种页面对象设计模式，算是一种比较好的设计模式。在该设计模式中，功能类（PageObjects）所代表的是每个页面之间的逻辑关系。</p>
+<p>1、可以减少了代码的重复编写。</p>
+<p>2、PO模式把页面元素定位和业务操作流程分开，界面元素的变化则不需要修改业务逻辑代码。</p>
+<p>3、 PO能提高代码的可读性，高复用性，可维护性。</p>
+<h1 id="2-PO框架与传统测试脚本编写方式有什么区别？"><a href="#2-PO框架与传统测试脚本编写方式有什么区别？" class="headerlink" title="2. PO框架与传统测试脚本编写方式有什么区别？"></a>2. PO框架与传统测试脚本编写方式有什么区别？</h1><p>PO框架与传统测试脚本编写方式的主要区别在于其结构化和模块化的程度。</p>
+<ul>
+<li><p><strong>传统测试脚本</strong>：传统方式编写的测试脚本往往将页面元素定位和操作逻辑混杂在一起，导致代码结构不清晰，难以维护。当页面元素发生变化时，需要修改大量的测试脚本，增加了维护成本。</p>
+</li>
+<li><p><strong>PO框架</strong>：而PO框架通过将页面元素和操作封装在页面对象类中，实现了测试脚本与页面细节的解耦。当页面发生变化时，只需修改对应的页面对象类，测试用例不需要做任何变动，从而降低了维护成本。此外，页面对象可以在多个测试用例中复用，避免了重复代码，提高了测试脚本的复用性。</p>
+<h1 id="3-常见的页面元素定位方法有哪些？各自的优缺点是什么？"><a href="#3-常见的页面元素定位方法有哪些？各自的优缺点是什么？" class="headerlink" title="3. 常见的页面元素定位方法有哪些？各自的优缺点是什么？"></a>3. 常见的页面元素定位方法有哪些？各自的优缺点是什么？</h1></li>
+</ul>
+<ol>
+<li>ID定位find_element(By.ID,value&#x3D;’’)</li>
+</ol>
+<p>优点：ID是唯一的，定位速度快。</p>
+<p>缺点：有些元素没有ID，不适用。</p>
+<p>  2. Name定位find_element(By.NAME,value&#x3D;” “)</p>
+<p>优点：Name属性通常是唯一的，定位速度快。</p>
+<p>缺点：有些元素没有Name属性，不适用。</p>
+<p>  3. Class Name定位find_element(By.CLASS_NAME,value&#x3D;” “)</p>
+<p>优点：Class Name属性通常是唯一的，定位速度快。</p>
+<p>缺点：有些元素没有Class Name属性，不适用。</p>
+<p>  4. Tag Name定位find_element(By.TAG_NAME,value&#x3D;” “)</p>
+<p>优点：Tag Name属性通常是唯一的，定位速度快。</p>
+<p>缺点：有些元素没有Tag Name属性，不适用。</p>
+<p>  5. Link Text定位find_element(By.LINK_TEXT,value&#x3D;” “)</p>
+<p>优点：Link Text属性通常是唯一的，定位速度快。</p>
+<p>缺点：只适用于链接。</p>
+<p> 6. Partial Link Text定位find_element(By.PARTIAL_LINK_TEXT,value&#x3D;” “)</p>
+<p>优点：Partial Link Text属性通常是唯一的，定位速度快。</p>
+<p>缺点：只适用于链接。</p>
+<p> 7. CSS Selector定位find_element(By.CSS_SELECTOR,value&#x3D;” “)</p>
+<p>优点：CSS Selector可以通过多个属性组合定位元素，定位灵活。</p>
+<p>缺点：CSS Selector语法较为复杂，学习成本较高。</p>
+<p>  8. XPath定位find_element(By.XPATH,value&#x3D;” “)</p>
+<p>优点：XPath可以通过多个属性组合定位元素，定位灵活。</p>
+<p>缺点：XPath语法较为复杂，定位速度较慢。4. 在复杂页面结构中，如何选择最合适的元素定位策略？</p>
+<h1 id="在复杂页面结构中，选择最合适的元素定位策略需要考虑以下因素："><a href="#在复杂页面结构中，选择最合适的元素定位策略需要考虑以下因素：" class="headerlink" title="在复杂页面结构中，选择最合适的元素定位策略需要考虑以下因素："></a>在复杂页面结构中，选择最合适的元素定位策略需要考虑以下因素：</h1><ul>
+<li><strong>元素的唯一性</strong>：优先选择具有唯一性的属性进行定位，如ID、Name等。如果这些属性不存在或不是唯一的，可以考虑使用CSS Selector或XPath进行组合定位。</li>
+<li><strong>页面的稳定性</strong>：尽量避免使用容易受页面结构变化影响的定位策略，如XPath的绝对路径定位。相对路径定位或属性定位可能更为稳定。</li>
+<li><strong>定位的效率</strong>：在选择定位策略时，还需要考虑定位的效率。ID和Name定位通常较快，而XPath和CSS Selector定位可能较慢，尤其是当页面元素较多时。因此，在可能的情况下，优先选择效率较高的定位策略。</li>
+<li><strong>元素的特性</strong>：对于某些特殊的元素，如动态加载的元素或隐藏在iframe中的元素，可能需要使用特定的定位策略。例如，对于动态加载的元素，可以增加等待时间或使用JavaScript进行操作；对于隐藏在iframe中的元素，需要先跳转到对应的iframe中再进行定位。</li>
+</ul>
+<h1 id="如何处理动态加载的页面元素定位问题"><a href="#如何处理动态加载的页面元素定位问题" class="headerlink" title="如何处理动态加载的页面元素定位问题"></a>如何处理动态加载的页面元素定位问题</h1><h2 id="使用XPath或CSS选择器进行灵活匹配"><a href="#使用XPath或CSS选择器进行灵活匹配" class="headerlink" title="使用XPath或CSS选择器进行灵活匹配"></a>使用XPath或CSS选择器进行灵活匹配</h2><p>当遇到ID或名称不唯一的情况时，推荐使用更复杂的路径表达式来精确定位目标节点。例如：</p>
+<ul>
+<li>XPath允许基于标签名、属性值甚至文本内容构建查询条件；</li>
+<li>CSS选择器支持伪类和组合模式，能够处理相对位置关系<em>3</em>。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Html&lt;!-- 假设有一个按钮，每次刷新后它的 ID 不同 --&gt;</span><br><span class="line">&lt;button id=&quot;btn_123&quot;&gt;Click Me&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
+<p>此时可尝试如下方法之一：</p>
+<ul>
+<li><strong>XPath</strong>: <code>/html/body//button[contains(text(), &#39;Click&#39;)]</code></li>
+<li><strong>CSS Selector</strong>: <code>body button:contains(&#39;Click&#39;)</code> (注意此语法需特定库支持)</li>
+</ul>
+<p>这两种方式都不依赖于具体的ID或其他静态特征，而是依据DOM结构特点来进行查找。</p>
+<h2 id="利用浏览器开发者工具辅助探索"><a href="#利用浏览器开发者工具辅助探索" class="headerlink" title="利用浏览器开发者工具辅助探索"></a>利用浏览器开发者工具辅助探索</h2><p>现代浏览器自带的强大调试面板不仅限于查看源码，还具备交互式的DOM探查能力。通过右键点击网页上的任何部分并选择“检查”，即可迅速跳转至对应的HTML片段；与此同时，“Elements”选项卡下的实时编辑功能有助于即时测试不同的选择逻辑是否有效<em>1</em>。</p>
+<p>此外，Network面板可用于监测AJAX请求过程中的数据交换情况，进而推测新加入的内容是如何随响应而产生的——这对于理解异步更新机制至关重要。</p>
+
+                </section>
+
+                
+                
+
+                
+
+            </article>
+
+            
+            <nav class="dis_flex al_post_nav">
+                <a class="al_post_nav_item dis_flex_acenter" href="/">
+                    
+                </a>
+                <a class="al_post_nav_item dis_flex_acenter" href="/2025/02/04/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B%EF%BC%882%E6%9C%884%E6%97%A5%EF%BC%89/">
+                    
+                        <span class="al_text_ellipsis al_post_nav_desc">多线程与多进程（2月4日）</span>
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
+                        </svg>
+                    
+                </a>
+            </nav>
+        </div>
+    </div>
+
+
+        <div class="al_index_footer dis_flex_center">
+    <div class="al_index_footer_item al_index_footer_title">
+        John Doe
+    </div>
+
+    
+    
+
+    <div class="al_index_footer_item al_index_footer_extra">
+        Created By 
+        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
+         · Power By 
+        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    </div>
+
+    <div class="al_index_footer_item al_index_footer_extra_right">
+        All Right Reserved
+    </div>
+</div>
+
+        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
+        
+        
+        
+        
+        
+
+    </body>
+</html>
