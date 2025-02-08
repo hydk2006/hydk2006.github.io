@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        
+    
+    <link rel='stylesheet' href="/./css/dracula.css">
+
+        <title>单元测试（2月9日）</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="manifest" href="/site.webmanifest">
+
+    <meta name="generator" content="Hexo 7.3.0"></head>
+    <body>
+        <header class="al_header al_pos_fixed">
+    <div class="al_header_container dis_flex_jcenter">
+        <div class="al_header_container_left">
+            <div class="al_header_site_title">
+                <a href="/">Hexo</a>
+            </div>
+        </div>
+
+        <div class="dis_flex_jcenter">
+            <div class="al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="al_sidebar">
+
+    <div class="al_sidebar_overlay al_full_cover"></div>
+
+    <div class="al_pos_fixed al_sidebar_cnt">
+        <div class="dis_flex_acenter al_sidebar_header">
+            <h3>Hexo</h3>
+            <div class="al_sidebar_close al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
+                </svg>
+            </div>
+        </div>
+
+        <div class="al_sidebar_author_cnt">
+
+            <div class="al_sidebar_author_info">
+                <h4>John Doe</h4>
+                <img class="al_sidebar_avatar" src="https://yourAvatorURL">
+                <p></p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
+        
+    <div class="dis_flex_center al_lightbox_cnt al_full_cover">
+        <img class="al_lightbox_img"/>
+    </div>
+    <div class="al_page_background dis_flex_center al_full_cover"></div>
+    <div class="al_page_container">
+        <div class="al_pos_ab al_fake_background"></div>
+        <div class="al_main_container al_shadow al_main_page_container">
+            <article class="al_article">
+                <header>
+                    <h1 class="al_page_title">
+                        单元测试（2月9日）
+                    </h1>
+                    <div class="al_page_info dis_flex">
+                        <div class="al_page_content_info">
+                            Sat February 8, 2025 09:14 PM
+                        </div>
+
+                        
+
+                        
+                        <span class="tags"></span>
+                    </div>
+                </header>
+
+                
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%94%A8%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%9D%E8%A7%A3%E9%87%8A%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="toc-text">1. 用自己的话解释什么是单元测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E9%A9%B1%E5%8A%A8%E4%BB%A3%E7%A0%81%E3%80%81%E6%A1%A9%E4%BB%A3%E7%A0%81%E4%BB%A5%E5%8F%8AMock%E4%BB%A3%E7%A0%81%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">2. 驱动代码、桩代码以及Mock代码是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">3. 什么是单元测试的输入数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%AE%9E%E9%99%85%E9%A1%B9%E7%9B%AE%E5%A6%82%E4%BD%95%E5%BC%80%E5%B1%95%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="toc-text">4. 实际项目如何开展单元测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%9C%A8%E5%AE%9E%E9%99%85%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E4%B8%AD%EF%BC%8C%E5%A6%82%E6%9E%9C%E9%81%87%E5%88%B0%E4%BA%86%E6%97%A0%E6%B3%95%E9%80%9A%E8%BF%87%E6%A1%A9%E4%BB%A3%E7%A0%81%E7%9B%B4%E6%8E%A5%E6%A8%A1%E6%8B%9F%E7%B3%BB%E7%BB%9F%E5%BA%95%E5%B1%82%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%A5%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3"><span class="toc-text">5. 在实际单元测试中，如果遇到了无法通过桩代码直接模拟系统底层函数调用的问题，该如何解决</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B-%E2%80%9C%E9%A2%84%E6%9C%9F%E8%BE%93%E5%87%BA%E2%80%9D-%E5%A4%8D%E6%9D%82%E6%80%A7%E8%A1%A8%E7%8E%B0%E5%9C%A8%E5%93%AA%E4%BA%9B%E6%96%B9%E9%9D%A2"><span class="toc-text">6. 单元测试用例 “预期输出” 复杂性表现在哪些方面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%BD%93%E5%85%B3%E8%81%94%E4%BE%9D%E8%B5%96%E7%9A%84%E4%BB%A3%E7%A0%81%E4%B8%8D%E5%8F%AF%E7%94%A8%E6%97%B6%EF%BC%8C%E9%80%9A%E5%B8%B8%E9%87%87%E7%94%A8%E4%BB%80%E4%B9%88%E6%96%B9%E6%B3%95%E8%A7%A3%E5%86%B3"><span class="toc-text">7. 当关联依赖的代码不可用时，通常采用什么方法解决</span></a></li></ol>
+                    </div>
+                
+
+                
+                <section id="post-body">
+                    <h1 id="1-用自己的话解释什么是单元测试"><a href="#1-用自己的话解释什么是单元测试" class="headerlink" title="1. 用自己的话解释什么是单元测试"></a>1. 用自己的话解释什么是单元测试</h1><p>单元测试是针对软件中的最小可测试单元（如函数、方法或类）进行的测试活动。它的目的是验证这些单元的功能是否正确，是否符合预期的行为。</p>
+<h1 id="2-驱动代码、桩代码以及Mock代码是什么"><a href="#2-驱动代码、桩代码以及Mock代码是什么" class="headerlink" title="2. 驱动代码、桩代码以及Mock代码是什么"></a>2. 驱动代码、桩代码以及Mock代码是什么</h1><ul>
+<li><strong>驱动代码</strong>：指调用被测函数的代码。在单元测试过程中，驱动模块通常包括调用被测函数前的数据准备、调用被测函数以及验证相关结果三个步骤。驱动代码的结构通常由单元测试的框架决定。</li>
+<li><strong>桩代码（Stub）</strong>：用来代替真实代码的临时代码。当某个函数A的内部实现中调用了尚未实现的函数B时，为了对函数A的逻辑进行测试，就需要模拟一个函数B，这个模拟的函数B的实现就是桩代码。桩代码主要关注的是利用桩代码来控制被测函数的执行路径。</li>
+<li><strong>Mock代码</strong>：和桩代码类似，都是用来代替真实代码的临时代码，起到隔离和补齐的作用。但Mock代码关注的是Mock方法是否被调用、以什么样的参数被调用、被调用的次数以及多个Mock函数的先后调用顺序。</li>
+</ul>
+<h1 id="3-什么是单元测试的输入数据"><a href="#3-什么是单元测试的输入数据" class="headerlink" title="3. 什么是单元测试的输入数据"></a>3. 什么是单元测试的输入数据</h1><p>单元测试的输入数据包括被测试函数的输入参数、被测试函数内部需要读取的全局静态变量、被测试函数内部需要读取的类成员变量、函数内部调用子函数获得的数据等。这些输入数据用于触发被测试单元的行为，并验证其行为是否符合预期。</p>
+<h1 id="4-实际项目如何开展单元测试"><a href="#4-实际项目如何开展单元测试" class="headerlink" title="4. 实际项目如何开展单元测试"></a>4. 实际项目如何开展单元测试</h1><p>在实际项目中开展单元测试通常包括以下几个步骤：</p>
+<ul>
+<li><strong>确定测试范围</strong>：明确哪些模块或函数需要进行单元测试。</li>
+<li><strong>编写测试用例</strong>：根据被测试单元的功能和需求，编写相应的测试用例。测试用例应包括各种边界条件和异常情况。</li>
+<li><strong>准备测试环境</strong>：搭建必要的测试环境，包括配置测试框架、准备测试数据等。</li>
+<li><strong>执行测试</strong>：运行测试用例，并观察测试结果。如果测试结果与预期不符，则需要调试并修复代码。</li>
+<li><strong>分析测试结果</strong>：对测试结果进行分析，确定是否存在缺陷或错误，并制定相应的修复计划。</li>
+<li><strong>持续集成</strong>：将单元测试集成到持续集成流程中，以确保每次代码提交都会自动触发单元测试，并及时发现潜在问题。</li>
+</ul>
+<h1 id="5-在实际单元测试中，如果遇到了无法通过桩代码直接模拟系统底层函数调用的问题，该如何解决"><a href="#5-在实际单元测试中，如果遇到了无法通过桩代码直接模拟系统底层函数调用的问题，该如何解决" class="headerlink" title="5. 在实际单元测试中，如果遇到了无法通过桩代码直接模拟系统底层函数调用的问题，该如何解决"></a>5. 在实际单元测试中，如果遇到了无法通过桩代码直接模拟系统底层函数调用的问题，该如何解决</h1><p>在实际单元测试中，如果遇到无法通过桩代码直接模拟系统底层函数调用的问题，可以尝试以下几种解决方法：</p>
+<ul>
+<li><strong>使用Mock框架</strong>：利用Mock框架（如EasyMock、Mockito等）来模拟底层函数的行为。这些框架提供了强大的功能，可以模拟函数的返回值、调用次数和调用顺序等。</li>
+<li><strong>底层模拟技术</strong>：在测试工程中添加新的代码来模拟底层函数的行为。这种方法需要深入了解底层函数的实现和调用机制，并确保模拟的行为与真实行为一致。</li>
+<li><strong>重构代码</strong>：如果底层函数的调用逻辑过于复杂或难以模拟，可以考虑对代码进行重构。通过重构，将底层函数的调用逻辑与业务逻辑分离，使得业务逻辑更加独立和易于测试。</li>
+<li><strong>利用依赖注入</strong>：在设计中采用依赖注入的方式，将底层函数的依赖注入到被测试单元中。这样，在测试时可以通过注入Mock对象来替代真实的底层函数。</li>
+</ul>
+<h1 id="6-单元测试用例-“预期输出”-复杂性表现在哪些方面"><a href="#6-单元测试用例-“预期输出”-复杂性表现在哪些方面" class="headerlink" title="6. 单元测试用例 “预期输出” 复杂性表现在哪些方面"></a>6. 单元测试用例 “预期输出” 复杂性表现在哪些方面</h1><p>单元测试用例的“预期输出”复杂性主要表现在以下几个方面：</p>
+<ul>
+<li><strong>多种输出情况</strong>：被测试单元可能根据不同的输入产生多种输出情况。这些输出情况需要被详细列出，并作为测试用例的预期输出。</li>
+<li><strong>依赖外部状态</strong>：有时被测试单元的输出可能依赖于外部状态或环境变量。这些依赖关系需要被识别并纳入测试用例的预期输出中。</li>
+<li><strong>复杂的逻辑判断</strong>：被测试单元可能包含复杂的逻辑判断，导致输出结果难以直接预测。此时需要仔细分析逻辑判断的条件和分支，以确保测试用例的预期输出准确无误。</li>
+<li><strong>异步操作</strong>：如果被测试单元涉及异步操作（如网络请求、数据库访问等），则预期输出可能需要在异步操作完成后才能获得。这增加了测试用例的复杂性和执行时间。</li>
+</ul>
+<h1 id="7-当关联依赖的代码不可用时，通常采用什么方法解决"><a href="#7-当关联依赖的代码不可用时，通常采用什么方法解决" class="headerlink" title="7. 当关联依赖的代码不可用时，通常采用什么方法解决"></a>7. 当关联依赖的代码不可用时，通常采用什么方法解决</h1><p>当关联依赖的代码不可用时，通常采用以下几种方法来解决单元测试中的问题：</p>
+<ul>
+<li><strong>Mock对象</strong>：使用Mock对象来模拟不可用的依赖代码。Mock对象可以模拟依赖代码的行为和返回值，从而使得单元测试可以在隔离的环境中进行。</li>
+<li><strong>桩代码</strong>：编写桩代码来替代不可用的依赖代码。桩代码可以提供固定的返回值或模拟的行为，以确保单元测试可以顺利进行。但需要注意的是，桩代码通常只用于临时替代不可用的依赖代码，并不作为长期解决方案。</li>
+<li><strong>重构代码</strong>：如果关联依赖的代码频繁不可用或难以模拟，可以考虑对代码进行重构。通过重构，将依赖关系明确化或模块化，使得单元测试更加容易进行。例如，可以采用依赖注入的方式将依赖关系注入到被测试单元中，从而方便地使用Mock对象或桩代码进行替代。</li>
+</ul>
+
+                </section>
+
+                
+                
+
+                
+
+            </article>
+
+            
+            <nav class="dis_flex al_post_nav">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2025/02/08/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%EF%BC%882%E6%9C%888%E6%97%A5%EF%BC%89/">
+                    
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
+                        </svg>
+                        <span class="al_text_ellipsis al_post_nav_desc">测试用例（2月8日）</span>
+                    
+                </a>
+                <a class="al_post_nav_item dis_flex_acenter" href="/2025/02/07/PO%E6%A1%86%E6%9E%B6%EF%BC%882%E6%9C%886%E6%97%A5%EF%BC%89/">
+                    
+                        <span class="al_text_ellipsis al_post_nav_desc">PO框架（2月6日）</span>
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
+                        </svg>
+                    
+                </a>
+            </nav>
+        </div>
+    </div>
+
+
+        <div class="al_index_footer dis_flex_center">
+    <div class="al_index_footer_item al_index_footer_title">
+        John Doe
+    </div>
+
+    
+    
+
+    <div class="al_index_footer_item al_index_footer_extra">
+        Created By 
+        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
+         · Power By 
+        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    </div>
+
+    <div class="al_index_footer_item al_index_footer_extra_right">
+        All Right Reserved
+    </div>
+</div>
+
+        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
+        
+        
+        
+        
+        
+
+    </body>
+</html>

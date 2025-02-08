@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        
+    
+    <link rel='stylesheet' href="/./css/dracula.css">
+
+        <title>PO框架（2月6日）</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="manifest" href="/site.webmanifest">
+
+    <meta name="generator" content="Hexo 7.3.0"></head>
+    <body>
+        <header class="al_header al_pos_fixed">
+    <div class="al_header_container dis_flex_jcenter">
+        <div class="al_header_container_left">
+            <div class="al_header_site_title">
+                <a href="/">Hexo</a>
+            </div>
+        </div>
+
+        <div class="dis_flex_jcenter">
+            <div class="al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="al_sidebar">
+
+    <div class="al_sidebar_overlay al_full_cover"></div>
+
+    <div class="al_pos_fixed al_sidebar_cnt">
+        <div class="dis_flex_acenter al_sidebar_header">
+            <h3>Hexo</h3>
+            <div class="al_sidebar_close al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
+                </svg>
+            </div>
+        </div>
+
+        <div class="al_sidebar_author_cnt">
+
+            <div class="al_sidebar_author_info">
+                <h4>John Doe</h4>
+                <img class="al_sidebar_avatar" src="https://yourAvatorURL">
+                <p></p>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
+        
+    <div class="dis_flex_center al_lightbox_cnt al_full_cover">
+        <img class="al_lightbox_img"/>
+    </div>
+    <div class="al_page_background dis_flex_center al_full_cover"></div>
+    <div class="al_page_container">
+        <div class="al_pos_ab al_fake_background"></div>
+        <div class="al_main_container al_shadow al_main_page_container">
+            <article class="al_article">
+                <header>
+                    <h1 class="al_page_title">
+                        PO框架（2月6日）
+                    </h1>
+                    <div class="al_page_info dis_flex">
+                        <div class="al_page_content_info">
+                            Fri February 7, 2025 05:33 PM
+                        </div>
+
+                        
+
+                        
+                        <span class="tags"></span>
+                    </div>
+                </header>
+
+                
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%9C%A8%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E4%B8%AD%EF%BC%8C%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E8%B0%83%E7%94%A8-Page-Object-%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95%E6%9D%A5%E5%AE%9E%E7%8E%B0%E6%B5%8B%E8%AF%95%E6%AD%A5%E9%AA%A4%EF%BC%9F"><span class="toc-text">1. 在测试用例中，如何正确调用 Page Object 类的方法来实现测试步骤？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E4%B8%AD%E7%9A%84%E6%96%AD%E8%A8%80%E5%92%8C%E9%AA%8C%E8%AF%81%E9%80%BB%E8%BE%91%EF%BC%9F"><span class="toc-text">2. 如何处理测试用例中的断言和验证逻辑？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Python-%E4%B8%AD%E7%9A%84%E7%9B%B8%E5%85%B3%E5%BA%93%E6%9D%A5%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8%E6%B5%8B%E8%AF%95%EF%BC%9F"><span class="toc-text">3. 如何使用 Python 中的相关库来实现数据驱动测试？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8-PO-%E6%A1%86%E6%9E%B6%E4%B8%AD%E9%9C%80%E8%A6%81%E8%AE%B0%E5%BD%95%E6%97%A5%E5%BF%97%EF%BC%9F"><span class="toc-text">4. 为什么在 PO 框架中需要记录日志？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0%E5%8C%96%E5%92%8C%E5%8A%A8%E6%80%81%E6%95%B0%E6%8D%AE%EF%BC%9F"><span class="toc-text">5. 如何处理测试数据中的参数化和动态数据？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8%E5%9B%BA%E5%AE%9A%E7%9A%84%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE"><span class="toc-text">2.  使用固定的测试数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E9%85%8D%E7%BD%AE%E5%B9%B6%E7%94%9F%E6%88%90%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A"><span class="toc-text">6. 配置并生成测试报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%A6%82%E4%BD%95%E7%BB%B4%E6%8A%A4%E5%92%8C%E6%9B%B4%E6%96%B0-PO-%E6%A1%86%E6%9E%B6%E4%BB%A3%E7%A0%81"><span class="toc-text">7. 如何维护和更新 PO 框架代码</span></a></li></ol></li></ol>
+                    </div>
+                
+
+                
+                <section id="post-body">
+                    <h1 id="1-在测试用例中，如何正确调用-Page-Object-类的方法来实现测试步骤？"><a href="#1-在测试用例中，如何正确调用-Page-Object-类的方法来实现测试步骤？" class="headerlink" title="1. 在测试用例中，如何正确调用 Page Object 类的方法来实现测试步骤？"></a>1. 在测试用例中，如何正确调用 Page Object 类的方法来实现测试步骤？</h1><ul>
+<li><strong>定义Page Object类</strong>：为每个页面定义一个对应的Page Object类，并在该类中封装该页面的元素和操作。例如，对于登录页面，可以定义一个<code>LoginPage</code>类，并在其中封装用户名输入框、密码输入框和登录按钮等元素及其操作方法。</li>
+<li><strong>实例化Page Object类</strong>：在测试用例中，通过传入WebDriver实例来实例化Page Object类。这样，Page Object类就可以使用WebDriver来与页面进行交互。</li>
+<li><strong>调用Page Object类的方法</strong>：通过实例化的Page Object对象调用其封装的方法来实现测试步骤。例如，调用<code>LoginPage</code>对象的登录方法来执行登录操作。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"># login_page.py</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">from selenium.webdriver.support.ui import WebDriverWait</span><br><span class="line">from selenium.webdriver.support import expected_conditions as EC</span><br><span class="line"></span><br><span class="line">class LoginPage:</span><br><span class="line">    def __init__(self, driver):</span><br><span class="line">        self.driver = driver</span><br><span class="line">        self.username_loc = (By.ID, &quot;username&quot;)</span><br><span class="line">        self.password_loc = (By.ID, &quot;password&quot;)</span><br><span class="line">        self.login_button_loc = (By.ID, &quot;login&quot;)</span><br><span class="line"></span><br><span class="line">    def enter_username(self, username):</span><br><span class="line">        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.username_loc))</span><br><span class="line">        self.driver.find_element(*self.username_loc).send_keys(username)</span><br><span class="line"></span><br><span class="line">    def enter_password(self, password):</span><br><span class="line">        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.password_loc))</span><br><span class="line">        self.driver.find_element(*self.password_loc).send_keys(password)</span><br><span class="line"></span><br><span class="line">    def click_login(self):</span><br><span class="line">        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.login_button_loc))</span><br><span class="line">        self.driver.find_element(*self.login_button_loc).click()</span><br><span class="line"></span><br><span class="line"># test_login.py</span><br><span class="line">import unittest</span><br><span class="line">from selenium import webdriver</span><br><span class="line">from login_page import LoginPage</span><br><span class="line"></span><br><span class="line">class TestLogin(unittest.TestCase):</span><br><span class="line">    def setUp(self):</span><br><span class="line">        self.driver = webdriver.Chrome()</span><br><span class="line">        self.driver.get(&quot;http://example.com/login&quot;)</span><br><span class="line">        self.login_page = LoginPage(self.driver)</span><br><span class="line"></span><br><span class="line">    def tearDown(self):</span><br><span class="line">        self.driver.quit()</span><br><span class="line"></span><br><span class="line">    def test_login(self):</span><br><span class="line">        self.login_page.enter_username(&quot;testuser&quot;)</span><br><span class="line">        self.login_page.enter_password(&quot;testpass&quot;)</span><br><span class="line">        self.login_page.click_login()</span><br><span class="line">        # 可以添加更多的断言来验证登录结果</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-如何处理测试用例中的断言和验证逻辑？"><a href="#2-如何处理测试用例中的断言和验证逻辑？" class="headerlink" title="2. 如何处理测试用例中的断言和验证逻辑？"></a>2. 如何处理测试用例中的断言和验证逻辑？</h1><ul>
+<li><strong>使用assert语句</strong>：在Python中，可以使用<code>assert</code>语句来检查某个条件是否为真。如果条件为假，则测试将失败。例如，可以断言登录后的页面标题是否与预期相符。</li>
+<li><strong>验证页面元素</strong>：检查页面上是否存在某个元素，或者某个元素的状态（如是否可见、是否启用等）是否符合预期。这可以通过Selenium提供的元素定位方法和属性访问方法来实现。</li>
+<li><strong>比较页面内容</strong>：将页面上的内容与预期的内容进行比较。例如，可以抓取页面上的文本或HTML源代码，并与预期的结果进行比较。</li>
+</ul>
+<h1 id="3-如何使用-Python-中的相关库来实现数据驱动测试？"><a href="#3-如何使用-Python-中的相关库来实现数据驱动测试？" class="headerlink" title="3. 如何使用 Python 中的相关库来实现数据驱动测试？"></a>3. 如何使用 Python 中的相关库来实现数据驱动测试？</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import unittest</span><br><span class="line">from selenium import webdriver</span><br><span class="line">from ddt import ddt, data, unpack</span><br><span class="line"> </span><br><span class="line">@ddt</span><br><span class="line">class SearchDDT(unittest.TestCase):</span><br><span class="line">  &#x27;&#x27;&#x27;docstring for SearchDDT&#x27;&#x27;&#x27;</span><br><span class="line">  def setUp(self):</span><br><span class="line">    self.driver = webdriver.Chrome()</span><br><span class="line">    self.driver.implicitly_wait(30)</span><br><span class="line">    self.driver.maximize_window()</span><br><span class="line">    self.driver.get(&quot;https://www.baidu.com&quot;)</span><br><span class="line"> </span><br><span class="line">  # specify test data using @data decorator</span><br><span class="line">  @data((&#x27;python&#x27;, &#x27;PyPI&#x27;))</span><br><span class="line">  @unpack</span><br><span class="line">  def test_search(self, search_value, expected_result):</span><br><span class="line">    search_text = self.driver.find_element_by_id(&#x27;kw&#x27;)</span><br><span class="line">    search_text.clear()</span><br><span class="line">    search_text.send_keys(search_value)</span><br><span class="line"> </span><br><span class="line">    search_button = self.driver.find_element_by_id(&#x27;su&#x27;)</span><br><span class="line">    search_button.click()</span><br><span class="line"> </span><br><span class="line">    tag = self.driver.find_element_by_link_text(&quot;PyPI&quot;).text</span><br><span class="line">    self.assertEqual(expected_result, tag)</span><br><span class="line"> </span><br><span class="line">  def tearDown(self):</span><br><span class="line">    self.driver.quit()</span><br><span class="line"> </span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">  unittest.main(verbosity=2)</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-为什么在-PO-框架中需要记录日志？"><a href="#4-为什么在-PO-框架中需要记录日志？" class="headerlink" title="4. 为什么在 PO 框架中需要记录日志？"></a>4. 为什么在 PO 框架中需要记录日志？</h1><ul>
+<li><strong>调试和排查问题</strong>：通过记录日志，可以方便地跟踪测试用例的执行过程，了解每个测试步骤的执行情况和结果。当测试用例失败时，可以通过查看日志来快速定位问题所在。</li>
+<li><strong>审计和合规性</strong>：在某些行业或组织中，可能需要记录测试用例的执行日志以满足审计和合规性要求。通过记录详细的日志信息，可以确保测试用例的执行过程可追溯、可验证。</li>
+<li><strong>分析和改进</strong>：通过收集和分析测试用例的执行日志，可以了解测试用例的执行效率、稳定性和可靠性等方面的信息。这些信息有助于对测试框架和测试用例进行优化和改进。</li>
+</ul>
+<h1 id="5-如何处理测试数据中的参数化和动态数据？"><a href="#5-如何处理测试数据中的参数化和动态数据？" class="headerlink" title="5. 如何处理测试数据中的参数化和动态数据？"></a>5. 如何处理测试数据中的参数化和动态数据？</h1><p>使用Mock对象<br>Mock对象可以模拟外部系统的行为，并返回预定义的数据。通过使用Mock对象，可以避免外部数据的动态变化对测试结果的影响。</p>
+<p> 示例： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> unittest.mock <span class="keyword">import</span> patch</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TestDynamicData</span>(unittest.TestCase):</span><br><span class="line"></span><br><span class="line"><span class="meta">    @patch(<span class="params"><span class="string">&#x27;module_under_test.external_service&#x27;</span></span>)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">test_dynamic_data</span>(<span class="params">self, mock_service</span>):</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 模拟外部服务返回的动态数据</span></span><br><span class="line"></span><br><span class="line">        mock_service.get_data.return_value = &#123;<span class="string">&#x27;key&#x27;</span>: <span class="string">&#x27;static_value&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        result = module_under_test.function_to_test()</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.assertEqual(result, &#123;<span class="string">&#x27;key&#x27;</span>: <span class="string">&#x27;static_value&#x27;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    unittest.main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-使用固定的测试数据"><a href="#2-使用固定的测试数据" class="headerlink" title="2.  使用固定的测试数据"></a>2.  使用固定的测试数据</h3><p>在测试中使用固定的数据集可以确保测试结果的可重复性和一致性。可以通过硬编码、配置文件或数据库中的预定义数据来实现。</p>
+<p> 示例： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_test_data</span>():</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&#x27;key&#x27;</span>: <span class="string">&#x27;static_value&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">function_to_test</span>():</span><br><span class="line"></span><br><span class="line">    data = get_test_data()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 处理数据的逻辑</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="6-配置并生成测试报告"><a href="#6-配置并生成测试报告" class="headerlink" title="6. 配置并生成测试报告"></a>6. 配置并生成测试报告</h1><p>1、pytest-html  安装<br>pytest-html 是一个 pytest 插件，用于生成 HTML 格式的测试报告。它可以将 pytest 运行的测试结果以 HTML 文件的形式输出，使测试报告更加直观易读</p>
+<p>pip3 install pytest-html </p>
+<p>2、在当前目录下生成测试报告<br>pytest –html&#x3D;report.html</p>
+<p>3、在命令行输出</p>
+<pre><code>if __name__ == &#39;__main__&#39;:
+   pytest.main([&quot;-s&quot;, &quot;-v&quot;, &quot;test_05.py&quot;,&quot;--html=report.html&quot;])
+</code></pre>
+<h2 id="7-如何维护和更新-PO-框架代码"><a href="#7-如何维护和更新-PO-框架代码" class="headerlink" title="7. 如何维护和更新 PO 框架代码"></a>7. 如何维护和更新 PO 框架代码</h2><p>为了保持PO框架代码的稳定性和可用性，需要定期对其进行维护和更新。以下是一些维护和更新PO框架代码的方法：</p>
+<ul>
+<li><strong>定期回顾和更新测试用例</strong>：随着应用程序的更新和变化，页面元素和功能可能会发生变化。因此，需要定期回顾和更新测试用例，以确保它们与当前的应用程序</li>
+</ul>
+
+                </section>
+
+                
+                
+
+                
+
+            </article>
+
+            
+            <nav class="dis_flex al_post_nav">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2025/02/08/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%EF%BC%882%E6%9C%889%E6%97%A5%EF%BC%89/">
+                    
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
+                        </svg>
+                        <span class="al_text_ellipsis al_post_nav_desc">单元测试（2月9日）</span>
+                    
+                </a>
+                <a class="al_post_nav_item dis_flex_acenter" href="/2025/02/05/PO%E6%A1%86%E6%9E%B6%EF%BC%882%E6%9C%885%E6%97%A5%EF%BC%89/">
+                    
+                        <span class="al_text_ellipsis al_post_nav_desc">PO框架（2月5日）</span>
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
+                        </svg>
+                    
+                </a>
+            </nav>
+        </div>
+    </div>
+
+
+        <div class="al_index_footer dis_flex_center">
+    <div class="al_index_footer_item al_index_footer_title">
+        John Doe
+    </div>
+
+    
+    
+
+    <div class="al_index_footer_item al_index_footer_extra">
+        Created By 
+        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
+         · Power By 
+        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    </div>
+
+    <div class="al_index_footer_item al_index_footer_extra_right">
+        All Right Reserved
+    </div>
+</div>
+
+        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
+        
+        
+        
+        
+        
+
+    </body>
+</html>
