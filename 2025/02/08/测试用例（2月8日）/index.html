@@ -88,10 +88,66 @@
                 </header>
 
                 
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E2%80%9C%E5%A5%BD%E7%9A%84%E2%80%9D%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%BF%85%E9%A1%BB%E5%85%B7%E5%A4%87%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-text">1. “好的”测试用例必须具备的特征</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="toc-text">2. 常用的测试用例设计方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%AF%B9%E4%BA%8E%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E8%BF%99%E4%B8%80%E6%B5%8B%E8%AF%95%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%9F%BA%E4%BA%8E%E7%AD%89%E4%BB%B7%E7%B1%BB%E4%BB%A5%E5%8F%8A%E8%BE%B9%E7%95%8C%E5%80%BC%E6%B3%95%E8%83%BD%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">3. 对于用户登录这一测试对象，基于等价类以及边界值法能设计的测试用例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%A6%82%E6%9E%9C%E4%BB%8E%E5%AE%89%E5%85%A8%E6%80%A7%E8%A7%92%E5%BA%A6%E5%87%BA%E5%8F%91%EF%BC%8C%E8%BF%98%E8%83%BD%E8%AE%BE%E8%AE%A1%E5%93%AA%E4%BA%9B%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">4. 如果从安全性角度出发，还能设计哪些测试用例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%85%BC%E5%AE%B9%E6%80%A7%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B"><span class="toc-text">5. 兼容性测试用例</span></a></li></ol>
+                    </div>
+                
 
                 
                 <section id="post-body">
-                    
+                    <h1 id="1-“好的”测试用例必须具备的特征"><a href="#1-“好的”测试用例必须具备的特征" class="headerlink" title="1. “好的”测试用例必须具备的特征"></a>1. “好的”测试用例必须具备的特征</h1><p>“好的”测试用例必须具备以下特征：</p>
+<ul>
+<li><strong>完整性</strong>：测试用例需要覆盖所有的测试需求，包括功能需求和非功能需求（如性能、安全、兼容性等）。确保没有遗漏任何重要的测试点。</li>
+<li><strong>准确性</strong>：测试用例的描述需要准确无误，包括预置条件、操作步骤、预期结果等。避免使用模糊或含糊的描述，以减少误解和歧义。</li>
+<li><strong>可重复性</strong>：测试用例需要具有可重复性，即在不同的测试环境中，使用相同的测试数据和操作步骤，应该能够得到相同的测试结果。</li>
+<li><strong>独立性</strong>：每个测试用例应该是独立的，不依赖于其他测试用例的执行结果。这样可以确保测试用例的可靠性和稳定性。</li>
+<li><strong>针对性</strong>：测试用例应该针对具体的测试目标进行设计，确保能够有效地发现潜在的问题和缺陷。</li>
+</ul>
+<h1 id="2-常用的测试用例设计方法"><a href="#2-常用的测试用例设计方法" class="headerlink" title="2. 常用的测试用例设计方法"></a>2. 常用的测试用例设计方法</h1><p><strong>等价类划分法</strong>：根据需求将输入数据划分为若干个子集（等价类），从每个等价类中选取少量代表数据作为测试用例。这种方法适用于无限多种输入的情况，可以用较少的测试用例尽可能多的将功能覆盖。</p>
+<p><strong>边界值分析法</strong>：针对输入或输出范围的边界值设计测试用例。因为边界处容易出现错误，所以需要对边界值进行重点测试。通常选取正好等于、刚刚大于或刚刚小于边界的值作为测试数据。</p>
+<p><strong>场景法</strong>：通过模拟用户操作场景来设计测试用例。这种方法基于业务需求和行业背景，尽可能真实地模拟用户的操作流程，包括正常流程和异常流程。</p>
+<p><strong>错误推测法</strong>：基于经验和直觉，预测可能出现错误的情况，并设计相应的测试用例。这种方法强调对被测试软件的需求理解以及设计实现的细节把握。</p>
+<h1 id="3-对于用户登录这一测试对象，基于等价类以及边界值法能设计的测试用例"><a href="#3-对于用户登录这一测试对象，基于等价类以及边界值法能设计的测试用例" class="headerlink" title="3. 对于用户登录这一测试对象，基于等价类以及边界值法能设计的测试用例"></a>3. 对于用户登录这一测试对象，基于等价类以及边界值法能设计的测试用例</h1><p>对于用户登录这一测试对象，基于等价类以及边界值法可以设计以下测试用例：</p>
+<ul>
+<li><strong>等价类划分法测试用例</strong>：<ul>
+<li>输入已注册的用户名和正确的密码，验证是否登录成功（有效等价类）。</li>
+<li>输入未注册的用户名和任意密码，验证是否登录失败，并且提示信息错误（无效等价类）。</li>
+<li>用户名和密码都为空，验证是否有相应非空提示，是否登录失败（无效等价类）。</li>
+</ul>
+</li>
+<li><strong>边界值分析法测试用例</strong>：<ul>
+<li>输入用户名或密码的最小长度值（如用户名或密码长度要求为6-20个字符，则测试6个字符和20个字符的情况）。</li>
+<li>输入用户名或密码的最大长度值。</li>
+<li>输入用户名或密码长度略超过最大限制的值，验证系统是否给出正确的提示信息。</li>
+</ul>
+</li>
+</ul>
+<h1 id="4-如果从安全性角度出发，还能设计哪些测试用例"><a href="#4-如果从安全性角度出发，还能设计哪些测试用例" class="headerlink" title="4. 如果从安全性角度出发，还能设计哪些测试用例"></a>4. 如果从安全性角度出发，还能设计哪些测试用例</h1><ul>
+<li><strong>密码安全性测试</strong>：<ul>
+<li>密码是否加密存储。</li>
+<li>密码输入框是否不支持复制粘贴。</li>
+<li>密码框输入的密码是否不支持在页面源码模式下被查看。</li>
+</ul>
+</li>
+<li><strong>防止攻击测试</strong>：<ul>
+<li>用户名和密码的输入框中分别输入典型的“SQL注入攻击”字符串，验证系统的返回页面。</li>
+<li>用户名和密码的输入框中分别输入典型的“XSS跨站脚本攻击”字符串，验证系统行为是否被篡改。</li>
+<li>连续多次登录失败情况下，系统是否会阻止后续的尝试以应对暴力破解。</li>
+</ul>
+</li>
+<li><strong>会话管理测试</strong>：<ul>
+<li>用户登录成功但是会话超时后，继续操作是否会回到登录界面。</li>
+<li>验证登录后的会话是否唯一，即同一用户在同一终端的不同浏览器上登录，验证登录功能的互斥性是否符合设计预期。</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-兼容性测试用例"><a href="#5-兼容性测试用例" class="headerlink" title="5. 兼容性测试用例"></a>5. 兼容性测试用例</h1><ul>
+<li><strong>不同浏览器</strong>：在不同浏览器下（如Chrome、Firefox、Safari等），验证登录页面的显示以及功能正确性。</li>
+<li><strong>相同浏览器的不同版本</strong>：在相同浏览器的不同版本下，验证登录页面的显示以及功能正确性。</li>
+<li><strong>不同移动设备终端</strong>：在不同移动设备终端（如手机、平板等）的不同浏览器下，验证登录页面的显示以及功能正确性。</li>
+<li><strong>不同分辨率</strong>：在不同分辨率的界面下，验证登录页面的显示以及功能正确性。确保在不同设备和分辨率下，用户都能够正常登录并使用系统。</li>
+</ul>
+
                 </section>
 
                 
@@ -103,7 +159,12 @@
 
             
             <nav class="dis_flex al_post_nav">
-                <a class="al_post_nav_item dis_flex_acenter" href="/">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2025/02/10/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%EF%BC%88%E7%90%86%E8%AE%BA%E7%AF%87%EF%BC%89%EF%BC%882%E6%9C%8810%E6%97%A5%EF%BC%89/">
+                    
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
+                        </svg>
+                        <span class="al_text_ellipsis al_post_nav_desc">自动化测试（理论篇）（2月10日）</span>
                     
                 </a>
                 <a class="al_post_nav_item dis_flex_acenter" href="/2025/02/08/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%EF%BC%882%E6%9C%889%E6%97%A5%EF%BC%89/">
